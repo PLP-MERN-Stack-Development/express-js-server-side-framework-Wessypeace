@@ -1,62 +1,60 @@
-# Express.js RESTful API Assignment
+# Express.js Server-Side Framework - Product API
 
-This assignment focuses on building a RESTful API using Express.js, implementing proper routing, middleware, and error handling.
+## Description
 
-## Assignment Overview
+This is a RESTful API built with Express.js to manage products. It implements CRUD operations, authentication, and logging middleware.
 
-You will:
-1. Set up an Express.js server
-2. Create RESTful API routes for a product resource
-3. Implement custom middleware for logging, authentication, and validation
-4. Add comprehensive error handling
-5. Develop advanced features like filtering, pagination, and search
+## Installation
 
-## Getting Started
+1. Clone the repository:
+git clone <https://github.com/PLP-MERN-Stack-Development/express-js-server-side-framework-Wessypeace.git>
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
+2. Navigate into the project folder:
+cd express-js-server-side-framework-Wessypeace
+
 3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Run the server:
-   ```
-   npm start
-   ```
+npm install
 
-## Files Included
+4. Start the server:
+node server.js
 
-- `Week2-Assignment.md`: Detailed assignment instructions
-- `server.js`: Starter Express.js server file
-- `.env.example`: Example environment variables file
+The server runs on: <http://localhost:3000>
 
-## Requirements
+### GET all products
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Postman, Insomnia, or curl for API testing
+- URL: /api/products
+- Method: GET
+- Auth: Not required
 
-## API Endpoints
+Response Example:
+[
+  {
+    "id": "1",
+    "name": "Laptop",
+    "description": "High-performance laptop with 16GB RAM",
+    "price": 1200,
+    "category": "electronics",
+    "inStock": true
+  }
+]
 
-The API will have the following endpoints:
+## Middleware
 
-- `GET /api/products`: Get all products
-- `GET /api/products/:id`: Get a specific product
-- `POST /api/products`: Create a new product
-- `PUT /api/products/:id`: Update a product
-- `DELETE /api/products/:id`: Delete a product
+1. Logger Middleware: Logs HTTP method, URL, and timestamp for each request.  
+2. Authentication Middleware: Protects POST, PUT, DELETE routes using x-api-key.
 
-## Submission
+## Notes
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+- Data is stored in an in-memory array, so all changes are lost when the server restarts.  
+- Include the API key when calling protected routes.
 
-1. Complete all the required API endpoints
-2. Implement the middleware and error handling
-3. Document your API in the README.md
-4. Include examples of requests and responses
+## Environment Variables
 
-## Resources
+A sample .env.example file is included:
 
-- [Express.js Documentation](https://expressjs.com/)
-- [RESTful API Design Best Practices](https://restfulapi.net/)
-- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
+API_KEY= x-api-key: 12345
+PORT=3000
+
+## Author
+
+Wessypeace (wesani letsoalo)
